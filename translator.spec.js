@@ -33,7 +33,7 @@ describe('testing translateToMorse spaces between words', () => {
         string = " ";
         let result = translateToMorse(string);
       // Assert
-        expect(result).toBe("/")
+        expect(result).toBe(" / ")
     })
 })
 
@@ -43,7 +43,7 @@ describe('testing translateToMorse multiple words structure', () => {
         // Arrange
         let string;
       // Act
-        string = "I feel happy";
+        string = "i feel happy";
         let result = translateToMorse(string);
       // Assert
         expect(result).toBe(".. / ..-. . . .-.. / .... .- .--. .--. -.--")
@@ -55,7 +55,7 @@ describe('testing translateToMorse sentence structure', () => {
         // Arrange
         let string;
       // Act
-        string = "Mary and Samantha arrived at the bus station early but waited until noon for the bus.";
+        string = "mary and samantha arrived at the bus station early but waited until noon for the bus.";
         let result = translateToMorse(string);
       // Assert
         expect(result).toBe("-- .- .-. -.-- / .- -. -.. / ... .- -- .- -. - .... .- / .- .-. .-. .. ...- . -.. / .- - / - .... . / -... ..- ... / ... - .- - .. --- -. / . .- .-. .-.. -.-- / -... ..- - / .-- .- .. - . -.. / ..- -. - .. .-.. / -. --- --- -. / ..-. --- .-. / - .... . / -... ..- ... .-.-.-")
