@@ -34,7 +34,7 @@ describe('testing translateToMorse spaces between words', () => {
         string = " ";
         let result = translateToMorse(string);
       // Assert
-        expect(result).toBe(" / ");
+        expect(result).toBe("/");
     });
 });
 
@@ -42,24 +42,25 @@ describe('testing translateToMorse spaces between words', () => {
 describe('testing translateToMorse multiple words structure', () => {
     it("I feel happy should translate to a .. / ..-. . . .-.. / .... .- .--. .--. -.--", () => {
         // Arrange
-        let string;
+        const word = "i feel happy".split("") ;
       // Act
-        string = "i feel happy";
-        let result = translateToMorse(string);
+        let morseArr = word.map(letter => translateToMorse(letter));
+        let finalWord = morseArr.join(" ")
+
       // Assert
-        expect(result).toBe(".. / ..-. . . .-.. / .... .- .--. .--. -.--");
+        expect(finalWord).toBe(".. / ..-. . . .-.. / .... .- .--. .--. -.--");
     });
 });
 
 describe('testing translateToMorse sentence structure', () => {
     it("Mary and Samantha arrived at the bus station early but waited until noon for the bus. should translate to a full sentence", () => {
         // Arrange
-        let string;
+        const word = "Mary and Samantha arrived at the bus station early but waited until noon for the bus".split("");
       // Act
-        string = "mary and samantha arrived at the bus station early but waited until noon for the bus.";
-        let result = translateToMorse(string);
+      let morseArr = word.map(letter => translateToMorse(letter));
+      let finalWord = morseArr.join(" ")
       // Assert
-        expect(result).toBe("-- .- .-. -.-- / .- -. -.. / ... .- -- .- -. - .... .- / .- .-. .-. .. ...- . -.. / .- - / - .... . / -... ..- ... / ... - .- - .. --- -. / . .- .-. .-.. -.-- / -... ..- - / .-- .- .. - . -.. / ..- -. - .. .-.. / -. --- --- -. / ..-. --- .-. / - .... . / -... ..- ... .-.-.-");
+        expect(finalWord).toBe("-- .- .-. -.-- / .- -. -.. / ... .- -- .- -. - .... .- / .- .-. .-. .. ...- . -.. / .- - / - .... . / -... ..- ... / ... - .- - .. --- -. / . .- .-. .-.. -.-- / -... ..- - / .-- .- .. - . -.. / ..- -. - .. .-.. / -. --- --- -. / ..-. --- .-. / - .... . / -... ..- ... .-.-.-");
     });
 });
 
@@ -101,14 +102,14 @@ describe('testing translateToMorse symbol and punctuation translation', () => {
 });
 
 describe('testing translateToEnglish special characters', () => {
-  it("&. Should translate to be .-...", () => {
+  it(".-... Should translate to be &", () => {
       // Arrange
       let string;
     // Act
-      string = "Mary arrived at the bus station 5 minutes early. However, Rob waited 10 minutes! for his bus.";
+      string = ".-...";
       let result = translateToEnglish(string);
     // Assert
-      expect(result).toBe(".-...");
+      expect(result).toBe("&");
   });
 });
 
@@ -141,6 +142,9 @@ describe('testing translateToEnglish symbol translation', () => {
         expect(result).toBe("!");
     });
 });
+
+
+//negative tests
 
 
 

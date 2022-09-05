@@ -43,7 +43,7 @@ export const morseToEnglish = {
             "-": "-....-",
             ":": "---...",
             "?": "..--..",
-            " ": " / ",
+            " ": "/",
             "/": "-..-.",
             "'": ".----.",
             '"': '.-..-.',
@@ -62,7 +62,6 @@ export const morseToEnglish = {
 
 export const englishToMorse = { 
     ".-": "a",
-    
     "-...": "b",
     "-.-.": "c",
     "-..": "d",
