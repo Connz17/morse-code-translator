@@ -15,7 +15,6 @@ export const translateToEnglish = (string) => {
     for (const key in englishToMorse) {
     const english = englishToMorse[key];
         if (string == key) {
-            console.log(english);
             return english;
         }
     }

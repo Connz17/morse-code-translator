@@ -3,15 +3,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Morse Code Translator</title>
 </head>
 <body>
-    <h1>English to Morse Code</h1>
-    <div class="translate">
-        <input type="text">
-        <button class="translate__button" >Translate</button>
+    <section class="english">
+        <h1 class="heading">English to Morse Code</h1>
+        <div class="translate">
+            <input placeholder="Write here..." class="translate__input" type="text">
+            <button class="translate__button">Translate</button>
+        </div>
+        <div class="result">
+            <div class="output"></div>
+        </div>
+    </section>
+    <div>
+        <button class="shift">Show Morse to English</button>
     </div>
-    <div class="output"></div>
+    <section class="morse">
+        <h1 class="heading">Morse to English</h1>
+        <div class="translate">
+            <input class="translate__input--morse translate__input" type="text">
+            <button class="translate__button--morse translate__button">Translate</button>
+        </div>
+        <div class="result" >
+            <div class="output--morse output"></div>
+        </div>
+        <img class="image" src="./images/cross.png" alt="cross">
+    </section>
     <script type="module" src="./main.js"></script>
 </body>
 </html>
